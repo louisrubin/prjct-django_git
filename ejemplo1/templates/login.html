@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <a href="{% url 'inicio' %}">ir a inicio</a>
+    <h1>Iniciar sesion</h1>
+
+    <form action="", method="post">{% csrf_token %}
+        <div>
+          <input type="text" id="inputUsername" placeholder="nombre de usuario" autofocus="" name="username">
+          <label for="inputUsername">nombre de usuario</label>
+  
+          
+          <input type="password" id="inputPassword" placeholder="contraseña" autofocus="" name="password">
+          <label for="inputPassword">contraseña</label>
+  
+          <button class="" type="submit">enviar</button>
+        </div>
+      </form>
+
+</body>
+</html>

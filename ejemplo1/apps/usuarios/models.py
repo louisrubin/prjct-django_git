@@ -6,4 +6,7 @@ from django.db.models.fields import CharField, IntegerField
 class Usuario(models.Model):
     nombre = CharField(max_length=50)
     user_name = CharField(max_length=50)
-    edad = IntegerField(max_length=10)
+    edad = IntegerField()
+
+    def __str__(self) -> str:
+        return self.nombre

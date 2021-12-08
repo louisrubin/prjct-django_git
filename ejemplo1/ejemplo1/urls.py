@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from . import views     # importo el archivo views.py que creamos 
+from django.contrib.auth import views as auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name = 'home')     # views. + (funcion en el archivo 'views.py' que retorna un render)
+    path('', views.inicio, name = 'inicio'),     # views. + (funcion en el archivo 'views.py' que retorna un render)
+    path('login/', auth.LoginView.as_view(template_name= 'login.html'), name = 'login')
 ]
