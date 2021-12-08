@@ -1,1 +1,53 @@
-<h1>hola :D</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branches</title>
+</head>
+<body>
+
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </div>
+
+    <form action="", method="post">{% csrf_token %}
+      <div>
+        <input type="text" id="inputUsername" placeholder="nombre de usuario" autofocus="" name="username">
+        <label for="inputUsername">nombre de usuario</label>
+
+        
+        <input type="password" id="inputPassword" placeholder="contraseña" autofocus="" name="password">
+        <label for="inputPassword">contraseña</label>
+
+        <button class="" type="submit">enviar</button>
+      </div>
+    </form>
+    
+    <article>
+        <header>
+          <h1>A heading here</h1>
+          <p>Posted by John Doe</p>
+          <p>Some additional information here</p>
+        </header>
+        <p>Lorem Ipsum dolor set amet....</p>
+      </article>
+
+    <ul>
+        {% for p in usuarios %}
+            <li>username: {{p.user_name}} - edad: {{p.edad}}</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
