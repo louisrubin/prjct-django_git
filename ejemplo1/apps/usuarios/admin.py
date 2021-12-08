@@ -3,6 +3,6 @@ from django.contrib import admin
 
 # Register your models here.
 
-from . import models
+from .models import Usuario
 
-admin.site.register(models.Usuario)
+admin.site.register(Usuario)

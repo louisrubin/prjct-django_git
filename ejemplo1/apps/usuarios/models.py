@@ -3,10 +3,14 @@ from django.db.models.fields import CharField, IntegerField
 
 # Create your models here.
 
-class Usuario(models.Model):
-    nombre = CharField(max_length=50)
-    user_name = CharField(max_length=50)
-    edad = IntegerField()
+from django.contrib.auth.models import AbstractUser
+
+class Usuario(AbstractUser):
+    dni = models.IntegerField(null=True, blank= True)
+    # foto = models.ImageField()
+
+    class Meta:
+        db_table = 'usuarios'
 
     def __str__(self) -> str:
-        return self.nombre
+        return f"{self.first_name} {self.last_name}"

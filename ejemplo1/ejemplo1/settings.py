@@ -34,6 +34,8 @@ LOGIN_URL = reverse_lazy('inicio')
 LOGIN_REDIRECT_URL = reverse_lazy('inicio')     # donde redirecciona al loguarte
 
 
+AUTH_USER_MODEL = 'usuarios.Usuario'
+
 # Application definition
 
 INSTALLED_APPS = [
