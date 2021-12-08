@@ -30,7 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = reverse_lazy('inicio')
 LOGIN_REDIRECT_URL = reverse_lazy('inicio')     # donde redirecciona al loguarte
+
 
 # Application definition
 
