@@ -6,4 +6,5 @@ app_name = "usuarios"
 
 urlpatterns = [
     path('', views.usuarios, name='usuarios'),
+    path("admin/listar/", views.ListarAdmin.as_view(), name="admin_listar"),
 ]

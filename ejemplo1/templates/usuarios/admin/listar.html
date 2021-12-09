@@ -1,0 +1,34 @@
+
+
+<h1>LISTA DE USUARIOS (admin) --> listar.html</h1>
+
+
+<button type="button"> <a href="{% url 'inicio' %}">ir al inicio</a> </button>
+
+<div class="row" style="padding: 10px;">
+    <div class="col">
+        <button type="button">Agregar</button>
+    </div>
+</div>
+
+<table>
+    <thead>
+            <th scope="col">Id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">username</th>
+            <th scope="col">accion</th>
+    </thead>
+
+        {% for x in usuarios %}
+            <tr>
+                <th scope="row">{{x.id}}</th>
+                <td>{{x.first_name}}</th>
+                <td>{{x.username}}</th>
+                <td></td>
+            </tr>
+        {% endfor %}
+
+    <tbody>
+
+    </tbody>
+</table>

@@ -7,6 +7,9 @@
     <title>Ejemplo 1</title>
 </head>
 <body>
+
+	{% include "base/navbar.html" %}
+
     {% block contenido %}
 
     {% endblock contenido %}
@@ -14,24 +17,14 @@
     <div class="container">
       <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{% url 'inicio' %}" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="{% url 'usuarios:admin_listar' %}" class="nav-link">Usuarios</a></li>
         </ul>
       </header>
     </div>
 
 
-    <article>
-        <header>
-          <h1>A heading here</h1>
-          <p>Posted by John Doe</p>
-          <p>Some additional information here</p>
-        </header>
-        <p>Lorem Ipsum dolor set amet....</p>
-      </article>
+    {% include "base/header.html" %}
 
     <ul>
         {% for p in usuarios %}
@@ -39,6 +32,7 @@
         {% endfor %}
     </ul>
 
+    {% include "base/footer.html" %}
 
 </body>
 </html>
