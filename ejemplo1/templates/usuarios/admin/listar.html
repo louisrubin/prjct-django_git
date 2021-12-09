@@ -7,7 +7,7 @@
 
 <div class="row" style="padding: 10px;">
     <div class="col">
-        <button type="button">Agregar</button>
+        <button type="button"> <a href="{% url 'usuarios:admin_nuevo' %}">Agregar</a> </button>
     </div>
 </div>
 
@@ -16,6 +16,7 @@
             <th scope="col">Id</th>
             <th scope="col">nombre</th>
             <th scope="col">username</th>
+            <th scope="col">dni</th>
             <th scope="col">accion</th>
     </thead>
 
@@ -24,6 +25,7 @@
                 <th scope="row">{{x.id}}</th>
                 <td>{{x.first_name}}</th>
                 <td>{{x.username}}</th>
+                <td>{{x.dni}}</th>
                 <td></td>
             </tr>
         {% endfor %}

@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView
 
 # Create your views here.
-
+from .forms import ProductoForm
 from .models import Usuario
 
 def usuarios(request):
@@ -19,3 +20,11 @@ class ListarAdmin(ListView):
         # self.request
         return Usuario.objects.filter(id=1)
     """
+
+class Nuevo_only_Admin(CreateView):
+    template_name= "usuarios/admin/nuevo.html"
+    model = Usuario
+    form_class = ProductoForm
+
+    def get_success_url(self, **kwargs) -> str:
+        return reverse_lazy("usuarios:admin_listar")
