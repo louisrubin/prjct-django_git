@@ -28,7 +28,7 @@
                 <td>{{x.dni}}</th>
                 <td>
                     <a href="">Ver</a>
-                    <a href="">Editar</a>
+                    <a href="{% url 'usuarios:admin_editar' x.id %}">Editar</a>
                     <a href="">Eliminar</a>
                 </td>
             </tr>
