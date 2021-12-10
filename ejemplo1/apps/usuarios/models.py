@@ -6,7 +6,11 @@ from django.db.models.fields import CharField, IntegerField
 from django.contrib.auth.models import AbstractUser
 
 class Usuario(AbstractUser):
-    dni = models.IntegerField(null=True, blank= True)
+    dni = models.IntegerField(null=False, blank= True)
+    username = models.CharField(unique=True,null=False, max_length=140)
+    first_name = models.CharField(null=False, max_length=150)
+    last_name = models.CharField(null=False, max_length=160)
+
     # foto = models.ImageField()
 
     class Meta:

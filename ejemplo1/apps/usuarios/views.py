@@ -1,10 +1,12 @@
+from django.db import models
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 from django.views.generic.edit import UpdateView
+from django.contrib.auth.models import User
 
 # Create your views here.
-from .forms import ProductoForm
+from .forms import ProductoForm, RegistroForm
 from .models import Usuario
 
 def usuarios(request):
@@ -14,8 +16,7 @@ class ListarAdmin(ListView):
     template_name = "usuarios/admin/listar.html"
     model = Usuario
     context_object_name = "usuarios"
-
-    
+        
     # return de query + filter
     def get_queryset(self):
         # self.request
@@ -39,3 +40,12 @@ class Editar_only_Admin(UpdateView):
 
     def get_success_url(self, **kwargs) -> str:
         return reverse_lazy("usuarios:admin_listar")
+
+
+
+class RegistroUsuario(CreateView):
+    template_name = "usuarios/registro.html"
+    model = Usuario
+    form_class = RegistroForm
+
+    success_url = reverse_lazy("login")
