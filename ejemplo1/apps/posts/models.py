@@ -14,3 +14,7 @@ class Post(models.Model):
 
     class Meta:
         db_table = 'post'
+
+    def __str__(self) -> str:
+
+        return f"{self.id} {self.titulo}"

@@ -1,5 +1,4 @@
 from django import forms
-from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.db import models
 
@@ -10,7 +9,10 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = Usuario
         fields = ["username", "first_name", "dni"]
-        labels = {"username": "Nombre de Usuario", "first_name": "Apellido", "dni": "DNI",}
+        labels = {"username": "Nombre de Usuario", 
+                "first_name": "Apellido", 
+                "dni": "DNI",
+                }
 
 
 class RegistroForm(UserCreationForm):
