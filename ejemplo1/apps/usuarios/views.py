@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 from django.views.generic.edit import UpdateView
-from django.contrib.auth.models import User
 
 # Create your views here.
 from .forms import ProductoForm, RegistroForm

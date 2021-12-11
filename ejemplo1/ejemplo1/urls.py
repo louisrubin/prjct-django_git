@@ -31,4 +31,5 @@ urlpatterns = [
     # Includes
 
     path('usuarios/', include('apps.usuarios.urls')),
+    path('posts', include('apps.posts.urls')),
 ]

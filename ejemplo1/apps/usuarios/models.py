@@ -6,10 +6,7 @@ from django.db.models.fields import CharField, IntegerField
 from django.contrib.auth.models import AbstractUser
 
 class Usuario(AbstractUser):
-    dni = models.IntegerField(null=False, blank= True)
-    username = models.CharField(unique=True,null=False, max_length=140)
-    first_name = models.CharField(null=False, max_length=150)
-    last_name = models.CharField(null=False, max_length=160)
+    dni = models.IntegerField()
 
     # foto = models.ImageField()
 
@@ -17,4 +14,8 @@ class Usuario(AbstractUser):
         db_table = 'usuarios'
 
     def __str__(self) -> str:
-        return f"{self.first_name} {self.last_name}"
+
+        if self.first_name or self.last_name:
+            return f"{self.first_name} {self.last_name}"
+        else:
+            return "[ ... ]"
